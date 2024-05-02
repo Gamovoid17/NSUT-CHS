@@ -3,8 +3,8 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-diabetes_model = pickle.load(open(r"C:\Users\ASUS\Desktop\chs main project\diabetes_model.sav", "rb"))
-heart_disease_model = pickle.load(open(r"C:\Users\ASUS\Desktop\chs main project\heart_disease_model.sav", "rb"))
+diabetes_model = pickle.load(open("diabetes_model.sav", "rb"))
+heart_disease_model = pickle.load(open("heart_disease_model.sav", "rb"))
 
 with st.sidebar:
     selected = option_menu('Multiple Disease Prediction System',
@@ -42,7 +42,7 @@ if selected == 'Diabetes Prediction':
 
     with col1:
         DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value (Range: 0.078-2.42)')
-
+        
     with col2:
         Age = st.text_input('Age of the Person (Range: 21-81)')
 
